@@ -10,7 +10,6 @@ Algoritmo JuegoMonedas_DP
 	Dimension tabla(6,6)
 	
 	n <- 6
-	
 
 	Escribir "Monedas generadas aleatoriamente:"
 	Para i <- 1 Hasta n Con Paso 1 Hacer
@@ -78,19 +77,25 @@ Algoritmo JuegoMonedas_DP
 	
 	Mientras izq <= der Y continuar Hacer
 		
-		// Mostrar monedas disponibles
+
 		Escribir ""
 		Escribir "Monedas disponibles:"
 		Para i <- izq Hasta der Con Paso 1 Hacer
 			Escribir monedas(i), " "
 		FinPara
-		
 
 		Escribir ""
 		Escribir "--- TU TURNO ---"
 		Escribir "Izquierda = ", monedas(izq), "  |  Derecha = ", monedas(der)
-		Escribir "Elige (I)zquierda o (D)erecha: "
-		Leer eleccion
+		
+		eleccion <- ""
+		Mientras eleccion <> "I" Y eleccion <> "i" Y eleccion <> "D" Y eleccion <> "d" Hacer
+			Escribir "Elige (I)zquierda o (D)erecha: "
+			Leer eleccion
+			Si eleccion <> "I" Y eleccion <> "i" Y eleccion <> "D" Y eleccion <> "d" Entonces
+				Escribir "Opcion invalida. Por favor elige I o D"
+			FinSi
+		FinMientras
 		
 		Si eleccion = "I" O eleccion = "i" Entonces
 			Escribir "Tomaste: ", monedas(izq)
@@ -126,7 +131,6 @@ Algoritmo JuegoMonedas_DP
 				resB <- 0
 			FinSi
 			
-
 			Si resA <= resB Entonces
 				Escribir "PC toma izquierda: ", monedas(izq)
 				puntajePC <- puntajePC + monedas(izq)
@@ -141,7 +145,6 @@ Algoritmo JuegoMonedas_DP
 		FinSi
 		
 	FinMientras
-	
 
 	Escribir ""
 	Escribir "=============================="
