@@ -78,7 +78,7 @@ Algoritmo JuegoMonedas_DP
 	
 	Mientras izq <= der Y continuar Hacer
 		
-		// Mostrar monedas disponibles
+
 		Escribir ""
 		Escribir "Monedas disponibles:"
 		Para i <- izq Hasta der Con Paso 1 Hacer
